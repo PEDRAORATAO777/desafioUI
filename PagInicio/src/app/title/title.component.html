@@ -1,0 +1,203 @@
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: 1200px) {
+   .title__container{
+    width: 100%;
+    flex-direction: column;
+   }
+}
+
+    #titulo {
+    background-color: rgb(7, 3, 3);
+    color: green;
+    padding-top: 20px;
+    /* Espaço acima do elemento */
+    margin-right: 80px;
+    /* Espaço à direita do elemento */
+    padding-bottom: 20px;
+    /* Espaço abaixo do elemento */
+    margin-left: 80px;
+    /* Espaço à esquerda do elemento */
+
+}
+
+.areaTexto{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+
+}
+
+
+.formulário {
+    margin-top:0;
+    /* Espaço acima do elemento */
+    margin-right: 10px;
+    /* Espaço à direita do elemento */
+    margin-bottom: 0;
+    /* Espaço abaixo do elemento */
+    margin-left: 10px;
+    /* Espaço à esquerda do elemento */
+    background-size: 15px;
+    background-color: rgb(18, 133, 133);
+    height: 90;
+}
+
+.label {
+    margin-left: 80px;
+    color: rgba(255, 255, 255, 0.849);
+    font-size: 44px;
+    font: 3em sans-serif;
+}
+form{
+
+    display: grid;
+    position: relative;
+    justify-content: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 80%;
+    background-color:rgb(0, 0, 0);
+    border: 0;    
+    margin: 0;
+    padding-bottom: 200px;}
+
+.title__container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display:grid;
+    height: 100%;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+    border: 0;    
+    margin: 0;
+    padding-bottom: 0;
+    background-color: rgb(112, 4, 253);
+}
+.ProdutoPeri{
+    border-color: brown;
+   display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 1180px;
+    margin: auto;
+    background-color:rgb(18, 133, 133);
+}
+p{
+    color: chartreuse;
+    font-size: 250px;
+}
+input{
+    font: 2em sans-serif;;
+}
+#label-img{
+    font: 30px sans-serif;
+}
+   
+ button{
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(112, 4, 253);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 40%;
+  }
+  button:hover{
+    background-color: rgb(112, 4, 253);
+    opacity: 0.8;
+  }
+
+</style>
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>PagRegistro</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+<div class="title__container">
+    <app-root>
+    
+    </app-root>
+    +
+    <!-- Início do formulário -->
+    <form>
+        <h1 id="titulo">Registro de Produto</h1>
+        <!--<form action="processar_registro.php" method="post">-->
+        <!-- Nome do Produto -->
+        <div class="formulário">
+            <label class="label" for="nome_produto">Nome do Produto:</label>
+            <input placeholder="Nome" class="areaTexto" type="text" id="nome_produto" name="nome_produto"
+                required>
+        </div>
+    
+        <!-- Categoria do Produto -->
+        <div class="formulário">
+            <label class="label" for="description">categoria:</label>
+            <input placeholder="Categoria do Produto" maxlength="100" class="areaTexto" id="descricao" name="descricao"
+                rows="1" cols="50"  required>
+        </div>
+    
+        <!-- Preço do Produto -->
+        <div class="formulário">
+            <label class="label" for="preco">Preço:</label>
+            <input placeholder="Preco do produto" class="areaTexto" type="number" id="preco" name="preco" step="0.01"
+               required>
+        </div>
+        <div class="formulário">
+            <label class="label" for="quantidade">Quantidade:</label>
+            <input class="areaTexto" placeholder="quantidade em estoque" type="number" id="quantidade" name="quantidade"
+                min="1" required>
+        </div>
+    
+        <!--Informe a data de vencimento-->
+        <div class="formulário">
+            <label class="label" for="dataVencimento">Data de Vencimento:</label>
+            <input class="areaTexto" maxlength="20" placeholder="Informe a data de vencimento" type="date"
+                id="dataVencimento" name="dataVencimento"  required>
+    
+        </div>
+    
+        <!--Informe se é perecivel-->
+        <div class="ProdutoPeri">
+            <label class="label" for="perecivel">perecivel:</label>
+            <h1 >sim</h1>
+            <input type="checkbox" class="areaCheck" name="sim" value="true" placeholder="sim">
+            <h1 >não</h1>
+            <input type="checkbox" class="areaCheck" name="não" value="false" placeholder="não">
+        </div>
+
+        <!--foto-->
+        <div class="formulário">
+            <label id="label-img" for="image"> Coloque a foto do produto</label>
+            <input type="file">
+        </div>
+        <!-- Botão de Envio -->
+        <div>
+            <button mat-button type="submit">Registrar Produto</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
